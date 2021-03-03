@@ -10,11 +10,9 @@
   
     function toggleModal() {
       refs.modal.classList.toggle('is-hidden');
-      //refs.modal.classList.toggle('visually-hidden');
     }
 
     function toggleModalClose() {
       refs.modal.classList.toggle('is-hidden');
-      //refs.modal.classList.toggle('visually-hidden');
     }
   })();
