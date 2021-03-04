@@ -761,6 +761,8 @@ section:last-child {
   position: absolute;
   top: 8px;
   right: 8px;
+
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .backdrop .icon {
@@ -784,12 +786,13 @@ section:last-child {
   margin-bottom: 12px;
 }
 
-/*.form {
+.form {
   display: flex;
-}*/
+  flex-direction:column;
+}
 
-.form-field {
-  margin-bottom: 10px;
+.form-field:not(:first-child) {
+  margin-top: 10px;
 }
 
 .form-label {
@@ -819,6 +822,8 @@ section:last-child {
   border: 1px solid var(--border-input);
   border-radius: 4px;
   outline: none;
+
+  transition: border var(--transition-duration) var(--transition-timing-function);
 }
 
 .form .icon {
@@ -826,6 +831,8 @@ section:last-child {
   top: 50%;
   left: 12px;
   transform: translatey(-50%);
+
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 
 .form textarea::placeholder {
@@ -839,7 +846,7 @@ section:last-child {
 
   resize: none;
   width: calc(100% - 32px);
-  min-height: 120px;
+  min-height: 96px;
 
   padding: 12px 16px;
 }
@@ -858,11 +865,56 @@ section:last-child {
   border: 1px solid var(--blue-text);
 }
 
+.form-field-agreements{
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--gray-text);
+
+  margin-top: 20px;
+  padding: 0 12px;
+
+  display: flex;
+}
+
+.form-checkbox{
+  /*-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute;*/
+}
+
+.form-label-agreements{
+  display: flex;
+  align-items: center;
+}
+
+.form .icon-check{
+  margin-right: 8px;
+
+  width: 16px;
+  height: 15px;
+
+  border: 1px solid var(--gray-text);
+}
+
+.form-link-agreements{
+  color: var(--blue-text);
+  text-decoration-line: underline;
+}
+
+.form-checkbox:checked + .icon-check{
+  color: brown;
+  background-image: url(../images/sprite.svg#icon-check);
+}
+
 .form [type='submit'] {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+  cursor: pointer;
 
   background-color: var(--blue-text);
   color: var(--white-text);
@@ -873,6 +925,13 @@ section:last-child {
   border: none;
 
   padding: 10px 55px;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   align-items: center;
+
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.form [type='submit']:hover,
+.form [type='submit']:focus {
+  background-color: var(--blue-bgc-hover-send);
 }
